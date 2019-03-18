@@ -3,6 +3,9 @@
   "version": "2.0.4",
   "private": true,
   "dependencies": {
+    "@types/jquery": "^3.3.29",
+    "@types/node": "^11.11.3",
+    "@types/react-router-dom": "^4.3.1",
     "bootstrap": "3",
     "bootstrap-colorpicker": "2.5.2",
     "bootstrap-duallistbox": "^3.0.6",
@@ -44,7 +47,7 @@
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "^2.1.8",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.6",
@@ -55,6 +58,7 @@
     "summernote": "^0.8.10",
     "then-request": "^6.0.0",
     "to-markdown": "^3.1.1",
+    "typescript": "^3.3.3333",
     "x-editable": "^1.5.1"
   },
   "scripts": {
@@ -66,7 +70,7 @@
   "devDependencies": {
     "@types/googlemaps": "^3.30.16",
     "@types/markerclustererplus": "^2.1.33",
-    "@types/react": "^16.7.8",
+    "@types/react": "^16.8.8",
     "babel-plugin-syntax-dynamic-import": "^6.18.0"
   },
   "resolutions": {

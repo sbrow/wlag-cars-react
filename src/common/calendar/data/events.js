@@ -1,6 +1,8 @@
-const moment = require('moment');
+// const moment = require('moment');
+import * as moment from 'moment';
 
-module.exports = [{
+// module.exports = [{
+const events = [{
     "_id": "544c4183be624ef013bb009a",
     "title": "All Day Event",
     "start": moment().subtract(15, 'day').startOf('day').add(21, 'hours'),
@@ -57,3 +59,5 @@ module.exports = [{
     "end": moment().add(8, 'day').startOf('day').add(22, 'hours'),
     "className": ["event", "bg-color-darken"]
 }];
+
+export default events;

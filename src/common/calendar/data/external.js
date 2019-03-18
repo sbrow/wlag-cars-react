@@ -1,4 +1,5 @@
-module.exports = [
+// module.export = [
+const items = [
     {
         title: "Office Meeting",
         description: "Currently busy",
@@ -18,3 +19,5 @@ module.exports = [
         icon: "fa-alert"
     }
 ];
+
+export default items
