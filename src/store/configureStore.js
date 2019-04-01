@@ -8,7 +8,7 @@ import {
   handleBodyClasses,
   dumpLayoutToStorage,
   layoutReducer,
-  layoutInit
+  layoutInit,
 } from "../common/layout";
 
 import { userReducer, requestUserInfo } from "../common/user";
@@ -22,7 +22,7 @@ import { outlookReducer } from "../views/outlook";
 import {
   voiceReducer,
   VoiceMiddleware,
-  voiceControlOn
+  voiceControlOn,
 } from "../common/voice-control";
 
 export const rootReducer = combineReducers({
@@ -34,7 +34,7 @@ export const rootReducer = combineReducers({
   events: eventsReducer,
   voice: voiceReducer,
   todo: todoReducer,
-  i18n: i18nReducer
+  i18n: i18nReducer,
 });
 
 const store = createStore(
@@ -44,9 +44,9 @@ const store = createStore(
       thunk,
       handleBodyClasses,
       dumpLayoutToStorage,
-      VoiceMiddleware
-    )
-  )
+      VoiceMiddleware,
+    ),
+  ),
 );
 
 store.dispatch(layoutInit());
@@ -54,8 +54,6 @@ store.dispatch(chatInit());
 store.dispatch(requestUserInfo());
 
 store.dispatch(i18nInit());
-
-
 
 if (config.voice_command_auto) {
   store.dispatch(voiceControlOn());

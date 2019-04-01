@@ -14,7 +14,7 @@ export default class SmartMenuItem extends React.Component {
     router: PropTypes.object.isRequired
   };
 
-  onLinkClick = (e: any) => {
+  onLinkClick = (e) => {
     const $body = $("body");
     const $html = $("html");
 
@@ -34,7 +34,7 @@ export default class SmartMenuItem extends React.Component {
   }
 
 
-  render(): JSX.Element {
+  render() {
     const item = this.props.item;
 
     const title = !item.parent ?
@@ -67,7 +67,7 @@ export default class SmartMenuItem extends React.Component {
 }
 
 
-function isItemActive(item: any, route: any) {
+function isItemActive(item, route) {
   if (item.route) {
     return item.route === route.location.pathname
   } else if (item.items) {

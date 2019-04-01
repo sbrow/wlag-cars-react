@@ -6,7 +6,7 @@ import {
   Stats,
   BigBreadcrumbs,
   WidgetGrid,
-  JarvisWidget
+  JarvisWidget,
 } from "../../../common";
 
 export default class NormalTables extends React.Component {
@@ -28,7 +28,7 @@ export default class NormalTables extends React.Component {
               <JarvisWidget id="wid-id-0" editbutton={false} color="blueDark">
                 <header>
                   <span className="widget-icon">
-                    
+
                     <i className="fa fa-table" />
                   </span>
 
@@ -100,7 +100,7 @@ export default class NormalTables extends React.Component {
               <JarvisWidget id="wid-id-1" editbutton={false} color="darken">
                 <header>
                   <span className="widget-icon">
-                    
+
                     <i className="fa fa-table" />
                   </span>
 
@@ -178,7 +178,7 @@ export default class NormalTables extends React.Component {
               <JarvisWidget id="wid-id-2" editbutton={false} color="greenDark">
                 <header>
                   <span className="widget-icon">
-                    
+
                     <i className="fa fa-table" />
                   </span>
 
@@ -242,7 +242,7 @@ export default class NormalTables extends React.Component {
               <JarvisWidget id="wid-id-3" editbutton={false} color="greenLight">
                 <header>
                   <span className="widget-icon">
-                    
+
                     <i className="fa fa-table" />
                   </span>
 
@@ -315,7 +315,7 @@ export default class NormalTables extends React.Component {
               <JarvisWidget id="wid-id-4" editbutton={false}>
                 <header>
                   <span className="widget-icon">
-                    
+
                     <i className="fa fa-table" />
                   </span>
 
@@ -332,7 +332,7 @@ export default class NormalTables extends React.Component {
                       with all classes mentioned above added to
                       <code>&lt;table&gt;</code>.
                       <code>
-                        
+
                         .table-bordered .table-striped .table-condensed
                         .table-hover .smart-form .has-tickbox
                       </code>

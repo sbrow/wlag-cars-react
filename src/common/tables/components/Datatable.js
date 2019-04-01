@@ -22,17 +22,17 @@ export default class Datatable extends React.Component {
     let { options } = { ...this.props } || {};
 
     let toolbar = "";
-    if (options.buttons) toolbar += "B";
-    if (this.props.paginationLength) toolbar += "l";
-    if (this.props.columnsHide) toolbar += "C";
+    if (options.buttons) { toolbar += "B"; }
+    if (this.props.paginationLength) { toolbar += "l"; }
+    if (this.props.columnsHide) { toolbar += "C"; }
 
     if (typeof options.ajax === "string") {
       let url = options.ajax;
       options.ajax = {
         url: url,
-        complete: function(xhr) {
+        complete: function (xhr) {
           // AjaxActions.contentLoaded(xhr)
-        }
+        },
       };
     }
 
@@ -48,24 +48,24 @@ export default class Datatable extends React.Component {
         oLanguage: {
           sSearch:
             "<span class='input-group-addon input-sm'><i class='glyphicon glyphicon-search'></i></span> ",
-          sLengthMenu: "_MENU_"
+          sLengthMenu: "_MENU_",
         },
         autoWidth: false,
         retrieve: true,
-        responsive: true
-      }
+        responsive: true,
+      },
     };
 
     const _dataTable = element.DataTable(options);
 
     if (this.props.filter) {
       // Apply the filter
-      element.on("keyup change", "thead th input[type=text]", function() {
+      element.on("keyup change", "thead th input[type=text]", function () {
         _dataTable
           .column(
             $(this)
               .parent()
-              .index() + ":visible"
+              .index() + ":visible",
           )
           .search(this.value)
           .draw();
@@ -77,13 +77,13 @@ export default class Datatable extends React.Component {
         .parent()
         .find(".dt-toolbar")
         .append(
-          '<div class="text-right"><img src="assets/img/logo.png" alt="SmartAdmin" style="width: 111px; margin-top: 3px; margin-right: 10px;"></div>'
+          '<div class="text-right"><img src="assets/img/logo.png" alt="SmartAdmin" style="width: 111px; margin-top: 3px; margin-right: 10px;"></div>',
         );
     }
 
     if (this.props.detailsFormat) {
       const format = this.props.detailsFormat;
-      element.on("click", "td.details-control", function() {
+      element.on("click", "td.details-control", function () {
         const tr = $(this).closest("tr");
         const row = _dataTable.row(tr);
         if (row.child.isShown()) {
@@ -103,6 +103,7 @@ export default class Datatable extends React.Component {
       options,
       detailsFormat,
       paginationLength,
+      // tslint:disable-next-line: trailing-comma
       ...props
     } = this.props;
     return (

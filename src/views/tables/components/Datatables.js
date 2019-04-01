@@ -1,10 +1,10 @@
 import React from "react";
 
 import {
-  Stats,
+  // Stats,
   BigBreadcrumbs,
   WidgetGrid,
-  JarvisWidget
+  JarvisWidget,
 } from "../../../common";
 
 import Datatable from "../../../common/tables/components/Datatable";
@@ -15,11 +15,11 @@ export default class Datatables extends React.Component {
       <div id="content">
         <div className="row">
           <BigBreadcrumbs
-            items={["Tables", "Data Tables"]}
+            items={["Tables"]}
             icon="fa fa-fw fa-table"
             className="col-xs-12 col-sm-7 col-md-7 col-lg-4"
           />
-          <Stats />
+          {/* <Stats /> */}
         </div>
 
         <WidgetGrid>
@@ -36,16 +36,24 @@ export default class Datatables extends React.Component {
                   <div className="widget-body no-padding">
                     <Datatable
                       options={{
-                        ajax: "assets/api/tables/datatables.standard.json",
+                        // ajax: "assets/api/tables/datatables.standard.json",
+                        ajax: "assets/cars.json",
                         columns: [
-                          { data: "id" },
-                          { data: "name" },
-                          { data: "phone" },
-                          { data: "company" },
-                          { data: "zip" },
-                          { data: "city" },
-                          { data: "date" }
-                        ]
+                          { data: "make" },
+                          { data: "model" },
+                          { data: "mileage" },
+                          { data: "price" },
+                          { data: "exterior" },
+                          { data: "interior" },
+                          { data: "vin" },
+                          { data: "seller" },
+                          { data: "link" },
+                          // { data: "phone" },
+                          // { data: "company" },
+                          // { data: "zip" },
+                          // { data: "city" },
+                          // { data: "date" },
+                        ],
                       }}
                       paginationLength={true}
                       className="table table-striped table-bordered table-hover"
@@ -53,222 +61,27 @@ export default class Datatables extends React.Component {
                     >
                       <thead>
                         <tr>
-                          <th data-hide="phone">ID</th>
+                          <th data-hide="phone">Make</th>
                           <th data-class="expand">
                             <i className="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs" />
-                            Name
+                            Model
                           </th>
                           <th data-hide="phone">
                             <i className="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs" />
-                            Phone
+                            Mileage
                           </th>
-                          <th>Company</th>
+                          <th>Price</th>
                           <th data-hide="phone,tablet">
                             <i className="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs" />
-                            Zip
+                            Exterior
                           </th>
-                          <th data-hide="phone,tablet">City</th>
+                          <th data-hide="phone,tablet">Interior</th>
                           <th data-hide="phone,tablet">
                             <i className="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs" />
-                            Date
+                            VIN
                           </th>
-                        </tr>
-                      </thead>
-                    </Datatable>
-                  </div>
-                </div>
-              </JarvisWidget>
-              <JarvisWidget id="wid-id-1" editbutton={false} color="blueDark">
-                <header>
-                  <span className="widget-icon">
-                    <i className="fa fa-table" />
-                  </span>
-                  <h2>Column Filters </h2>
-                </header>
-                <div>
-                  <div className="widget-body no-padding">
-                    <Datatable
-                      options={{
-                        ajax: "assets/api/tables/datatables.filters.json",
-                        columns: [
-                          { data: "name" },
-                          { data: "position" },
-                          { data: "office" },
-                          { data: "age" },
-                          { data: "date" },
-                          { data: "salary" }
-                        ]
-                      }}
-                      filter="true"
-                      className="table table-striped table-bordered"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th className="hasinput" style={{ width: "17%" }}>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Filter Name"
-                            />
-                          </th>
-                          <th className="hasinput" style={{ width: "18%" }}>
-                            <div className="input-group">
-                              <input
-                                className="form-control"
-                                placeholder="Filter Position"
-                                type="text"
-                              />
-                              <span className="input-group-addon">
-                                <span className="onoffswitch">
-                                  <input
-                                    type="checkbox"
-                                    name="start_interval"
-                                    className="onoffswitch-checkbox"
-                                    id="st3"
-                                  />
-                                  <label
-                                    className="onoffswitch-label"
-                                    htmlFor="st3"
-                                  >
-                                    <span
-                                      className="onoffswitch-inner"
-                                      data-swchon-text="YES"
-                                      data-swchoff-text="NO"
-                                    />
-                                    <span className="onoffswitch-switch" />
-                                  </label>
-                                </span>
-                              </span>
-                            </div>
-                          </th>
-                          <th className="hasinput" style={{ width: "16%" }}>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Filter Office"
-                            />
-                          </th>
-                          <th className="hasinput" style={{ width: "17%" }}>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Filter Age"
-                            />
-                          </th>
-                          <th className="hasinput icon-addon">
-                            <input
-                              id="dateselect_filter"
-                              type="text"
-                              placeholder="Filter Date"
-                              className="form-control datepicker"
-                              data-dateformat="yy/mm/dd"
-                            />
-                            <label
-                              htmlFor="dateselect_filter"
-                              className="glyphicon glyphicon-calendar no-margin padding-top-15"
-                              rel="tooltip"
-                              title=""
-                              data-original-title="Filter Date"
-                            />
-                          </th>
-                          <th className="hasinput" style={{ width: "16%" }}>
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Filter Salary"
-                            />
-                          </th>
-                        </tr>
-                        <tr>
-                          <th data-class="expand">Name</th>
-                          <th>Position</th>
-                          <th data-hide="phone">Office</th>
-                          <th data-hide="phone">Age</th>
-                          <th data-hide="phone,tablet">Start date</th>
-                          <th data-hide="phone,tablet">Salary</th>
-                        </tr>
-                      </thead>
-                    </Datatable>
-                  </div>
-                </div>
-              </JarvisWidget>
-              <JarvisWidget id="wid-id-2" editbutton={false} color="blueDark">
-                <header>
-                  <span className="widget-icon">
-                    <i className="fa fa-table" />
-                  </span>
-                  <h2>Hide / Show Columns </h2>
-                </header>
-                <div>
-                  <div className="widget-body no-padding">
-                    <Datatable
-                      options={{
-                        ajax: "assets/api/tables/datatables.standard.json",
-                        columns: [
-                          { data: "id" },
-                          { data: "name" },
-                          { data: "phone" },
-                          { data: "company" },
-                          { data: "zip" },
-                          { data: "city" },
-                          { data: "date" }
-                        ],
-                        buttons: ["colvis"]
-                      }}
-                      className="table table-striped table-bordered table-hover"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th data-hide="phone">ID</th>
-                          <th data-class="expand">Name</th>
-                          <th>Phone</th>
-                          <th data-hide="phone">Company</th>
-                          <th data-hide="phone,tablet">Zip</th>
-                          <th data-hide="phone,tablet">City</th>
-                          <th data-hide="phone,tablet">Date</th>
-                        </tr>
-                      </thead>
-                    </Datatable>
-                  </div>
-                </div>
-              </JarvisWidget>
-              <JarvisWidget id="wid-id-3" editbutton={false} color="blueDark">
-                <header>
-                  <span className="widget-icon">
-                    <i className="fa fa-table" />
-                  </span>
-                  <h2>Export to PDF / Excel</h2>
-                </header>
-                <div>
-                  <div className="widget-body no-padding">
-                    <Datatable
-                      options={{
-                        ajax: "assets/api/tables/datatables.standard.json",
-                        columns: [
-                          { data: "id" },
-                          { data: "name" },
-                          { data: "phone" },
-                          { data: "company" },
-                          { data: "zip" },
-                          { data: "city" },
-                          { data: "date" }
-                        ],
-                        buttons: ["copy", "excel", "pdf"]
-                      }}
-                      className="table table-striped table-bordered table-hover"
-                      width="100%"
-                    >
-                      <thead>
-                        <tr>
-                          <th data-hide="mobile-p">ID</th>
-                          <th data-class="expand">Name</th>
-                          <th>Phone</th>
-                          <th data-hide="mobile-p">Company</th>
-                          <th data-hide="mobile-p,tablet-p">Zip</th>
-                          <th data-hide="mobile-p,tablet-p">City</th>
-                          <th data-hide="mobile-p,tablet-p">Date</th>
+                          <th>Seller</th>
+                          <th>Link</th>
                         </tr>
                       </thead>
                     </Datatable>
@@ -278,7 +91,7 @@ export default class Datatables extends React.Component {
             </article>
           </div>
         </WidgetGrid>
-      </div>
+      </div >
     );
   }
 }
