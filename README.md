@@ -1,6 +1,8 @@
 SmartAdmin on ReactJS!
 ======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sbrow/wlag-cars-react.svg)](https://greenkeeper.io/)
+
 * smartadmin 1.9.0
 * react 16.6+
 * webpack 4
