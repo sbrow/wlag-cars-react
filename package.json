@@ -46,7 +46,7 @@
     "react-bootstrap": "^0.32.1",
     "react-cropper": "^1.0.1",
     "react-dom": "^16.6.3",
-    "react-google-maps": "^7.3.0",
+    "react-google-maps": "^9.4.5",
     "react-loadable": "^5.4.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
